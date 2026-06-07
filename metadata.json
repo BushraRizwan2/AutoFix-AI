@@ -1,0 +1,11 @@
+{
+  "name": "AutoFix AI - Multi-Portal Platform",
+  "description": "A multi-portal SaaS platform for car body shops, customers, and administrators. Includes a customer-facing estimator, a shop management dashboard, and an admin oversight panel.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "prompt": "",
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

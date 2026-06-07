@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoFix AI - Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <style>
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animate-gradient {
+        animation: gradient 15s ease infinite;
+      }
+
+      /* Animation for scroll reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s, transform 0.8s;
+        transition-timing-function: ease-out;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      /* Global interactive card style */
+      .card-interactive {
+        transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                    box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                    border-color 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                    background-color 0.2s ease-in-out;
+        will-change: transform, box-shadow;
+      }
+      .card-interactive:hover {
+        transform: translateY(-5px) scale(1.015);
+        box-shadow: 0 15px 30px -5px rgba(124, 58, 237, 0.18), 0 10px 15px -5px rgba(124, 58, 237, 0.1);
+        border-color: rgba(124, 58, 237, 0.4) !important;
+      }
+      .dark .card-interactive:hover {
+        border-color: rgba(167, 139, 250, 0.4) !important;
+        box-shadow: 0 15px 30px -5px rgba(167, 139, 250, 0.18), 0 10px 15px -5px rgba(167, 139, 250, 0.1);
+      }
+
+      /* Clean, custom themed scrollbars for all scrollable elements */
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(124, 58, 237, 0.25); /* Violet-600 with opacity */
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(124, 58, 237, 0.45);
+      }
+
+      /* Dark mode scrollbar styling */
+      .dark ::-webkit-scrollbar-thumb {
+        background: rgba(167, 139, 250, 0.25); /* Light violet with opacity */
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: rgba(167, 139, 250, 0.45);
+      }
+
+      /* Standard scrollbar support for Firefox and responsive rendering */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(124, 58, 237, 0.25) transparent;
+      }
+      .dark *, .dark {
+        scrollbar-color: rgba(167, 139, 250, 0.25) transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.11.0",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
